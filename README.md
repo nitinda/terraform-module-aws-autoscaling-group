@@ -71,8 +71,8 @@ Details are in respective branch.
 ## Outputs
 
 * **_id_**
+* **_name_**
 * **_arn_**
-* **_dns\_name_**
 
 
 Details are in respective branch.
