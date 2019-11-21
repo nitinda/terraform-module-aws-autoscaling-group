@@ -80,13 +80,26 @@ module "<layer>-efs-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-| Variable               |          Description         |    Type    |
-|------------------------|------------------------------|------------|
-|                        |                              |            |
+|         **_Variable_**        |            **_Description_**             |   **_Type_**   |
+|-------------------------------|------------------------------------------|----------------|
+| name_prefix                   | Creates a unique name                    | string          |
+| desired_capacity              | The number of Amazon EC2 instances       | string          |
+| max_size                      | The maximum size                         | string          |
+| min_size                      | The minimum size                         | string          |
+| default_cooldown              | The amount of time, in seconds           | string          |
+| health_check_type             | Type of health check                     | string          |
+| force_delete                  | Allows deleting the autoscaling group    | string          |
+| vpc_zone_identifier           | A list of subnet IDs to launch resources | list            |
+| health_check_grace_period     | Time (in seconds) after instance comes   | string          |
+| suspended_processes           | A list of processes to suspend           | list            |
+| tags                          | A list of tag blocks                     | map             |
+| override_instance_types       | The size of instance to launch           | list            |
+| launch_template_specification | Nested argument defines the LC           | list of maps    |
+| instances_distribution        | Nested argument containing settings      | list of maps    |
+| common_tags                   | Common tags                              | map             |
 
 
 
-Details are in respective branch.
 
 
 ## Outputs
@@ -96,7 +109,6 @@ Details are in respective branch.
 * **_arn_**
 
 
-Details are in respective branch.
 
 
 ### Usage
