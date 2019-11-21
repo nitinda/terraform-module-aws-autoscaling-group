@@ -21,11 +21,11 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_terraform-11_**
+From branch : **_terraform-11/master_**
 
 * **_EC2 AutoScalling Group (Terraform 11 supported code)_**
 
-From branch : **_terraform-12_** *work in progress*
+From branch : **_terraform-12/master_** *work in progress*
 
 * **_EC2 AutoScalling Group (Terraform 12 supported code - work in progres)_**
 
