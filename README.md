@@ -21,13 +21,9 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_terraform-11_**
+From branch : **_terraform-11/master_**
 
 * **_EC2 AutoScalling Group (Terraform 11 supported code)_**
-
-From branch : **_terraform-12_** *work in progress*
-
-* **_EC2 AutoScalling Group (Terraform 12 supported code - work in progres)_**
 
 
 ---
@@ -47,9 +43,34 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-efs-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-11/master"
 
+  providers = {
+    "aws" = "aws.services"
+  }
 
+  name_prefix               = "aws-autoscaling-group-"
+  desired_capacity          = "${var.asg_desired_capacity}"
+  common_tags               = "${var.common_tags}"
+  max_size                  = "${var.asg_max_size}"
+  min_size                  = "${var.asg_min_size}"
+  default_cooldown          = "${var.asg_default_cooldown}"
+  force_delete              = "${var.asg_force_delete}"
+  health_check_type         = "${var.asg_health_check_type}"
+  vpc_zone_identifier       = ["${var.asg_subnet_ids}"]
+  health_check_grace_period = "${var.asg_health_check_grace_period}"
+  suspended_processes       = "${var.asg_uspended_processes}"
+  override_instance_types   = "${var.asg_override_instance_types}"
+  launch_template_specification = [
+    {
+      launch_template_id = "${var.launch_template_id}"
+      version            = "$$Latest"
+    }
+  ]
+  instances_distribution    = "${var.asg_instances_distribution}"
+  tags                      = "${merge(var.common_tags, map(
+    "Name", "aws-autoscaling-group-ec2-worker-nodes"
+  ))}"
 }
 ```
 ---
