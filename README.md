@@ -58,6 +58,7 @@ module "<layer>-autoscaling-group-<AccountID>" {
   force_delete              = "${var.asg_force_delete}"
   health_check_type         = "${var.asg_health_check_type}"
   vpc_zone_identifier       = ["${var.asg_subnet_ids}"]
+  target_group_arns         = ["${var.target_group_arns}"]
   health_check_grace_period = "${var.asg_health_check_grace_period}"
   suspended_processes       = "${var.asg_uspended_processes}"
   override_instance_types   = "${var.asg_override_instance_types}"
