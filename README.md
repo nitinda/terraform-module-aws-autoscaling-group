@@ -10,7 +10,7 @@ This module may be used to create EC2 AutoScalling Group resources in AWS cloud 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.10 or newer.
+This module needs Terraform 0.11.14 or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -42,7 +42,7 @@ From branch : **_terraform-11/master_**
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-efs-<AccountID>" {
+module "<layer>-autoscaling-group-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-11/master"
 
   providers = {
@@ -73,6 +73,8 @@ module "<layer>-efs-<AccountID>" {
   ))}"
 }
 ```
+
+
 ---
 
 ## Inputs
@@ -80,8 +82,8 @@ module "<layer>-efs-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**        |            **_Description_**             |   **_Type_**   |
-|-------------------------------|------------------------------------------|----------------|
+|         **_Variable_**        |            **_Description_**             |    **_Type_**   |
+|-------------------------------|------------------------------------------|-----------------|
 | name_prefix                   | Creates a unique name                    | string          |
 | desired_capacity              | The number of Amazon EC2 instances       | string          |
 | max_size                      | The maximum size                         | string          |
@@ -97,7 +99,6 @@ The variables required in order for the module to be successfully called from th
 | launch_template_specification | Nested argument defines the LC           | list of maps    |
 | instances_distribution        | Nested argument containing settings      | list of maps    |
 | common_tags                   | Common tags                              | map             |
-
 
 
 
