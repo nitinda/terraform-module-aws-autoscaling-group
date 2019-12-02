@@ -10,6 +10,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
     force_delete              = "${var.force_delete}"
     suspended_processes       = "${var.suspended_processes}"
     tags                      = ["${data.null_data_source.null_data_source_asg_tags.*.outputs}"]
+    target_group_arns         = ["${var.target_group_arns}"]
     mixed_instances_policy {
       launch_template {
         launch_template_specification = ["${var.launch_template_specification}"]

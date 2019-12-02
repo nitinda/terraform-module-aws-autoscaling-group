@@ -92,6 +92,7 @@ The variables required in order for the module to be successfully called from th
 | health_check_type             | Type of health check                     | string          |
 | force_delete                  | Allows deleting the autoscaling group    | string          |
 | vpc_zone_identifier           | A list of subnet IDs to launch resources | list            |
+| target_group_arns             | A list of aws_alb_target_group ARNs      | list            |
 | health_check_grace_period     | Time (in seconds) after instance comes   | string          |
 | suspended_processes           | A list of processes to suspend           | list            |
 | tags                          | A list of tag blocks                     | map             |
@@ -99,6 +100,8 @@ The variables required in order for the module to be successfully called from th
 | launch_template_specification | Nested argument defines the LC           | list of maps    |
 | instances_distribution        | Nested argument containing settings      | list of maps    |
 | common_tags                   | Common tags                              | map             |
+
+
 
 
 

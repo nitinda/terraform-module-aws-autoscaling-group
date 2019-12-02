@@ -25,6 +25,11 @@ variable "vpc_zone_identifier" {
   type        = "list"
 }
 
+variable "target_group_arns" {
+  description = "A list of aws_alb_target_group ARNs"
+  type        = "list"
+}
+
 variable "default_cooldown" {
   description = "The amount of time, in seconds, after a scaling activity completes before another scaling activity can start."
 }
