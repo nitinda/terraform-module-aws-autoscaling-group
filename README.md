@@ -71,19 +71,38 @@ module "autoscaling_group" {
   providers = {
     aws = aws.services
   }
-
+  
   name_prefix               = "ec2-asg-"
-  desired_capacity          = 1
-  max_size                  = 1
+  desired_capacity          = 0
+  max_size                  = 0
   min_size                  = 0
   default_cooldown          = 1
   vpc_zone_identifier       = var.vpc_zone_identifier
   health_check_grace_period = 1
   launch_template           = {}
   mixed_instances_policy    = {
+      launch_template = {
+          launch_template_specification = {
+              launch_template_id = var.launch_template_id
+              version            = "$Latest"
+          }
 
+          override = [
+              {
+                  instance_type = "m4.large"
+              },
+              {
+                  instance_type = "t3.large"
+              }
+          ]
+      }
+      instances_distribution = {
+          spot_allocation_strategy                 = "capacity-optimized"
+          on_demand_base_capacity                  = 0
+          on_demand_percentage_above_base_capacity = 0
+      }
   }
-  tags = merge(var.common_tags, map(
+  tags                      = merge(var.common_tags, map(
     "Name", "ec2-autoscaling-group"
   ))
 }
