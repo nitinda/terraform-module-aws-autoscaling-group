@@ -37,7 +37,6 @@ variable "load_balancers" {
   default     = []
 }
 
-
 variable "default_cooldown" {
   description = "The amount of time, in seconds, after a scaling activity completes before another scaling activity can start."
   default     = 60
@@ -62,6 +61,12 @@ variable "suspended_processes" {
 variable "tags" {
   description = "A list of tag blocks."
   type        = map(string)
+}
+
+variable "launch_template" {
+  description = "Nested argument with Launch template specification to use to launch instances."
+  type        = map(string)
+  default     = {}
 }
 
 variable "mixed_instances_policy" {

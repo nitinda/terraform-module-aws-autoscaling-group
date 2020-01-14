@@ -21,6 +21,15 @@ resource "aws_autoscaling_group" "autoscaling_group" {
     }
   }
 
+  dynamic "launch_template" {
+    for_each = var.launch_template
+    content {
+      id      = lookup(launch_template.value, "id", null)
+      name    = lookup(launch_template.value, "name", null)
+      version = lookup(launch_template.value, "version", null)
+    }
+  }
+
   dynamic "mixed_instances_policy" {
     for_each = var.mixed_instances_policy == {} ? [] : [var.mixed_instances_policy]
     content {
