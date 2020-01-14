@@ -28,6 +28,7 @@ variable "vpc_zone_identifier" {
 variable "target_group_arns" {
   description = "A list of aws_alb_target_group ARNs"
   type        = list(string)
+  default     = []
 }
 
 variable "default_cooldown" {
