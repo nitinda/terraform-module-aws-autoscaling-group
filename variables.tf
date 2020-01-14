@@ -38,6 +38,7 @@ variable "default_cooldown" {
 
 variable "force_delete" {
   description = "Allows deleting the autoscaling group without waiting for all instances in the pool to terminate"
+  default     = true
 }
 
 variable "health_check_grace_period" {
