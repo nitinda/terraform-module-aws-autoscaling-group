@@ -74,7 +74,7 @@ The variables required in order for the module to be successfully called from th
 
 
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|**_Variable_** | **_Description_** | **_Type_** |
 |:----|:----|-----:|-----:|
 | **_name\_prefix_** | Creates a unique name | _string_ |
 | desired_capacity | The number of Amazon EC2 instances | _string_ |
