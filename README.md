@@ -10,7 +10,7 @@ This module may be used to create EC2 AutoScalling Group resources in AWS cloud 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.14 or newer.
+This module needs **_Terraform 0.11.14_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -20,15 +20,6 @@ This module deploys aws services details are in respective feature branches.
 ## Features Branches
 
 Below we are able to check the resources that are being created as part of this module call:
-
-From branch : **_terraform-11/master_**
-
-* **_EC2 AutoScalling Group (Terraform 11 supported code)_**
-
-
----
-
-## Below are the resources that are launched by this module
 
 * **_EC2 AutoScalling Group_**
 
@@ -42,7 +33,7 @@ From branch : **_terraform-11/master_**
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-autoscaling-group-<AccountID>" {
+module "autoscaling_group" {
   source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-11/master"
 
   providers = {
