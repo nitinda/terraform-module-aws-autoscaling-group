@@ -10,6 +10,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   force_delete              = var.force_delete
   suspended_processes       = var.suspended_processes
   target_group_arns         = var.target_group_arns
+  load_balancers            = var.load_balancers
 
   dynamic "tag" {
     for_each = var.tags
@@ -19,7 +20,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
       propagate_at_launch = true
     }
   }
-  
+
   dynamic "mixed_instances_policy" {
     for_each = var.mixed_instances_policy == {} ? [] : [var.mixed_instances_policy]
     content {

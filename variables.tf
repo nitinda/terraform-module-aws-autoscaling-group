@@ -31,6 +31,13 @@ variable "target_group_arns" {
   default     = []
 }
 
+variable "load_balancers" {
+  description = "A list of elastic load balancer names to add to the autoscaling group names"
+  type        = list(string)
+  default     = []
+}
+
+
 variable "default_cooldown" {
   description = "The amount of time, in seconds, after a scaling activity completes before another scaling activity can start."
   default     = 60
