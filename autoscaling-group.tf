@@ -9,8 +9,17 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   default_cooldown          = var.default_cooldown
   force_delete              = var.force_delete
   suspended_processes       = var.suspended_processes
-  tags                      = var.tags
   target_group_arns         = var.target_group_arns
+
+  dynamic "tag" {
+    for_each = var.tags
+    content {
+      key                 = tag.key
+      value               = tag.value
+      propagate_at_launch = true
+    }
+  }
+  
   dynamic "mixed_instances_policy" {
     for_each = var.mixed_instances_policy == {} ? [] : [var.mixed_instances_policy]
     content {
@@ -49,8 +58,10 @@ resource "aws_autoscaling_group" "autoscaling_group" {
       }
     }
   }
+
   lifecycle {
     create_before_destroy = true
   }
+
 }
 
