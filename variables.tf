@@ -55,24 +55,21 @@ variable "tags" {
   type        = map(string)
 }
 
-variable "override_instance_types" {
-  description = "The size of instance to launch, minimum 2 types must be specified."
-  type        = list(string)
+variable "mixed_instances_policy" {
+  description = "Configuration block containing settings to define launch targets for Auto Scaling groups"
+  default     = {}
+  type        = any
 }
 
-variable "launch_template_specification" {
-  description = "Nested argument defines the Launch Template."
-  type        = list(string)
-}
-
-variable "instances_distribution" {
-  description = "Nested argument containing settings on how to mix on-demand and Spot instances in the Auto Scaling group."
-  type        = list(string)
-}
-
-## Tags
-variable "common_tags" {
-  description = "Resources Tags"
-  type        = map(string)
-}
-
+# variable "override_instance_types" {
+#   description = "The size of instance to launch, minimum 2 types must be specified."
+#   type        = list(string)
+# }
+# variable "launch_template_specification" {
+#   description = "Nested argument defines the Launch Template."
+#   type        = list(string)
+# }
+# variable "instances_distribution" {
+#   description = "Nested argument containing settings on how to mix on-demand and Spot instances in the Auto Scaling group."
+#   type        = list(string)
+# }
