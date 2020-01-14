@@ -34,7 +34,7 @@ Below we are able to check the resources that are being created as part of this 
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-efs-<AccountID>" {
+module "autoscaling_group" {
   source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=master"
 
   providers = {
