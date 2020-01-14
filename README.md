@@ -3,7 +3,7 @@
 
 ## General
 
-This module may be used to create EC2 AutoScalling Group resources in AWS cloud provider..
+This module may be used to create **_EC2 AutoScalling Group_** resources in AWS cloud provider..
 
 ---
 
@@ -66,7 +66,6 @@ module "autoscaling_group" {
 }
 ```
 
-
 ---
 
 ## Inputs
@@ -74,27 +73,25 @@ module "autoscaling_group" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|         **_Variable_**        |            **_Description_**             |    **_Type_**   |
-|-------------------------------|------------------------------------------|-----------------|
-| name_prefix                   | Creates a unique name                    | string          |
-| desired_capacity              | The number of Amazon EC2 instances       | string          |
-| max_size                      | The maximum size                         | string          |
-| min_size                      | The minimum size                         | string          |
-| default_cooldown              | The amount of time, in seconds           | string          |
-| health_check_type             | Type of health check                     | string          |
-| force_delete                  | Allows deleting the autoscaling group    | string          |
-| vpc_zone_identifier           | A list of subnet IDs to launch resources | list            |
-| target_group_arns             | A list of aws_alb_target_group ARNs      | list            |
-| health_check_grace_period     | Time (in seconds) after instance comes   | string          |
-| suspended_processes           | A list of processes to suspend           | list            |
-| tags                          | A list of tag blocks                     | map             |
-| override_instance_types       | The size of instance to launch           | list            |
-| launch_template_specification | Nested argument defines the LC           | list of maps    |
-| instances_distribution        | Nested argument containing settings      | list of maps    |
-| common_tags                   | Common tags                              | map             |
 
-
-
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|-----:|
+| **_name\_prefix_** | Creates a unique name | _string_ |
+| desired_capacity | The number of Amazon EC2 instances | _string_ |
+| max_size | The maximum size | _string_ |
+| min_size | The minimum size | _string_ |
+| default_cooldown | The amount of time, in seconds | _string_ |
+| health_check_type | Type of health check | string          |
+| force_delete | Allows deleting the autoscaling group | _string_ |
+| vpc_zone_identifier | A list of subnet IDs to launch resources | _list_ |
+| target_group_arns | A list of aws_alb_target_group ARNs | _list_ |
+| health_check_grace_period | Time (in seconds) after instance comes | _string_ |
+| suspended_processes | A list of processes to suspend | _list_ |
+| tags | A list of tag blocks | map |
+| override_instance_types | The size of instance to launch | _list_ |
+| launch_template_specification | Nested argument defines the LC | _list of maps_ |
+| instances_distribution | Nested argument containing settings | _list of maps_ |
+| common_tags | Common tags | _map_ |
 
 
 
