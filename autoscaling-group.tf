@@ -22,7 +22,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   }
 
   dynamic "launch_template" {
-    for_each = var.launch_template
+    for_each = length(keys(var.launch_template)) == 0 ? [] : [var.launch_template]
     content {
       id      = lookup(launch_template.value, "id", null)
       name    = lookup(launch_template.value, "name", null)
