@@ -66,7 +66,6 @@ variable "tags" {
 variable "launch_template" {
   description = "Nested argument with Launch template specification to use to launch instances."
   type        = map(string)
-  default     = {}
 }
 
 variable "mixed_instances_policy" {
