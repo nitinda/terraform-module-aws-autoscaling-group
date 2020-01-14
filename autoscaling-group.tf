@@ -34,7 +34,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
     for_each = var.mixed_instances_policy == {} ? [] : [var.mixed_instances_policy]
     content {
       dynamic "instances_distribution" {
-        for_each = lookup(mixed_instances_policy.value, "instances_distribution", [])
+        for_each = length(keys(lookup(mixed_instances_policy.value, "instances_distribution", {}))) == 0 ? [] : [lookup(mixed_instances_policy.value, "instances_distribution", {})]
         content {
           on_demand_allocation_strategy            = lookup(instances_distribution.value, "on_demand_allocation_strategy", null)
           on_demand_base_capacity                  = lookup(instances_distribution.value, "on_demand_base_capacity", null)
@@ -46,10 +46,10 @@ resource "aws_autoscaling_group" "autoscaling_group" {
       }
 
       dynamic "launch_template" {
-        for_each = lookup(mixed_instances_policy.value, "launch_template", [])
+        for_each = length(keys(lookup(mixed_instances_policy.value, "launch_template", {}))) == 0 ? [] : [lookup(mixed_instances_policy.value, "launch_template", {})]
         content {
           dynamic "launch_template_specification" {
-            for_each = lookup(launch_template.value, "launch_template_specification", [])
+            for_each = length(keys(lookup(launch_template.value, "launch_template_specification", {}))) == 0 ? [] : [lookup(launch_template.value, "launch_template_specification", {})]
             content {
               launch_template_id   = lookup(launch_template_specification.value, "launch_template_id", null)
               launch_template_name = lookup(launch_template_specification.value, "launch_template_name", null)
@@ -58,7 +58,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
           }
 
           dynamic "override" {
-            for_each = lookup(launch_template.value, "override", [])
+            for_each = length(keys(lookup(launch_template.value, "override", {}))) == 0 ? [] : [lookup(launch_template.value, "override", {})]
             content {
               instance_type     = lookup(override.value, "instance_type", null)
               weighted_capacity = lookup(override.value, "weighted_capacity", null)

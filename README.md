@@ -34,6 +34,8 @@ Below we are able to check the resources that are being created as part of this 
 
 To use this module, add the following call to your code:
 
+_Example with_ **_launch\_tamplate_**
+
 ```tf
 module "autoscaling_group" {
   source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-12/master"
@@ -42,8 +44,50 @@ module "autoscaling_group" {
     aws = aws.services
   }
 
-
+  name_prefix               = "ec2-asg-"
+  desired_capacity          = 1
+  max_size                  = 1
+  min_size                  = 0
+  default_cooldown          = 1
+  vpc_zone_identifier       = var.vpc_zone_identifier
+  health_check_grace_period = 1
+  launch_template           = {
+      id      = var.launch_template_id
+      version = "$Latest"
+  }
+  tags                      = merge(var.common_tags, map(
+    "Name", "ec2-autoscaling-group"
+  ))
 }
+
+```
+
+_Example with_ **_mixed\_instances\_policy_**
+
+```tf
+module "autoscaling_group" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-12/master"
+
+  providers = {
+    aws = aws.services
+  }
+
+  name_prefix               = "ec2-asg-"
+  desired_capacity          = 1
+  max_size                  = 1
+  min_size                  = 0
+  default_cooldown          = 1
+  vpc_zone_identifier       = var.vpc_zone_identifier
+  health_check_grace_period = 1
+  launch_template           = {}
+  mixed_instances_policy    = {
+
+  }
+  tags = merge(var.common_tags, map(
+    "Name", "ec2-autoscaling-group"
+  ))
+}
+
 ```
 ---
 
@@ -81,7 +125,6 @@ The variables required in order for the module to be successfully called from th
 * **_arn_**
 
 
-Details are in respective branch.
 
 
 ### Usage
