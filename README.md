@@ -129,8 +129,8 @@ The variables required in order for the module to be successfully called from th
 | **_health\_check\_grace\_period_** | Time (in seconds) after instance comes | _string_ | **_Optional (Default - 300)_** |
 | **_suspended\_processes_** | A list of processes to suspend | _list(string)_ | **_Optional_** |
 | **_tags_** | A list of tag blocks | _map(string)_ | **_Required_** |
-| **_mixed\_instances\_policy_** | Configuration block containing settings to define launch targets for Auto Scaling groups | _any_ | **_Optional_** |
-| **_launch\_template_** | Nested argument with Launch template specification to use to launch instances | _map(string)_ | **_Required_** |
+| **_mixed\_instances\_policy_** | Configuration block | _any_ | **_Optional_** |
+| **_launch\_template_** | Nested argument with Launch template | _map(string)_ | **_Required_** |
 
 
 
