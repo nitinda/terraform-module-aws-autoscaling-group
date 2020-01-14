@@ -35,34 +35,12 @@ To use this module, add the following call to your code:
 
 ```tf
 module "<layer>-efs-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-11/master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=master"
 
   providers = {
     aws = "aws.services"
   }
-  
-  name_prefix               = "demo-asg-ec2-"
-  desired_capacity          = 5
-  common_tags               = "${var.common_tags}"
-  max_size                  = 5
-  min_size                  = 0
-  default_cooldown          = 1
-  force_delete              = true
-  health_check_type         = "EC2"
-  vpc_zone_identifier       = ["${var.vpc_zone_identifier}"]
-  health_check_grace_period = 1
-  suspended_processes       = []
-  override_instance_types   = "${var.asg_override_instance_types}"
-  launch_template_specification = [
-    {
-      launch_template_id = "${var.launch_template_id}"
-      version            = "$$Latest"
-    }
-  ]
-  instances_distribution    = "${var.instances_distribution}"
-  tags                      = "${merge(var.common_tags, map(
-    "Name", "demo-asg-ec2-worker-nodes"
-  ))}"
+
 
 }
 ```
