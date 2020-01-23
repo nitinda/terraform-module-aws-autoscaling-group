@@ -79,7 +79,7 @@ _In order for the variables to be accessed on module level please use the syntax
 module.<module_name>.<output_variable_name>
 ```
 
-- The output variable is able to be accessed through terraform state file using the syntax below:
+_The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
 "${data.terraform_remote_state.<module_name>.<output_variable_name>}"
