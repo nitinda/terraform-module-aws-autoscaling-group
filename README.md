@@ -1,38 +1,38 @@
-# Terraform Module Name: terraform-module-aws-autoscaling-group
+# _Terraform Module : terraform-module-aws-autoscaling-group_
 
 
-## General
+## _General_
 
-This module may be used to create **_EC2 AutoScalling Group_** resources in AWS cloud provider..
-
----
-
-
-## Prerequisites
-
-This module needs **_Terraform 0.12.19_** or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
-
-This module deploys aws services details are in respective feature branches.
-
+_This module may be used to create_ **_EC2 AutoScalling Group_** _resources in AWS cloud provider....._
 
 ---
 
 
-## Features Branches
+## _Prerequisites_
 
-Below we are able to check the resources that are being created as part of this module call:
+_This module needs_ **_Terraform 0.12.19_** _or newer._
+_You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
+
+_This module deploys aws services details are in respective feature branches._
+
+
+---
+
+
+## _Features Branches_
+
+_Below we are able to check the resources that are being created as part of this module call:_
 
 * **_EC2 AutoScalling Group_**
 
 
 ---
 
-## Usage
+## _Usage_
 
-## Using this repo
+## _Using this repo_
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 _Example with_ **_launch\_tamplate_**
 
@@ -110,9 +110,9 @@ module "autoscaling_group" {
 ```
 ---
 
-## Inputs
+## _Inputs_
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
@@ -134,7 +134,7 @@ The variables required in order for the module to be successfully called from th
 
 
 
-## Outputs
+## _Outputs_
 
 * **_id_**
 * **_name_**
@@ -142,21 +142,20 @@ The variables required in order for the module to be successfully called from th
 
 
 
+### _Usage_
 
-### Usage
-In order for the variables to be accessed on module level please use the syntax below:
+_In order for the variables to be accessed on module level please use the syntax below:_
 
 ```tf
 module.<module_name>.<output_variable_name>
 ```
 
-- The output variable is able to be accessed through terraform state file using the syntax below:
+_The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
 data.terraform_remote_state.<module_name>.<output_variable_name>
-
 ```
 
 
 ## Authors
-Module maintained by Module maintained by the - **_Nitin Das_**
+_Module maintained by Module maintained by the -_ **_Nitin Das_**
