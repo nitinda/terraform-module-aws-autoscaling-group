@@ -1,14 +1,14 @@
 # _Terraform Module : terraform-module-aws-autoscaling-group_
 
 
-## General
+## _General_
 
 _This module may be used to create_ **_EC2 AutoScalling Group_** _resources in AWS cloud provider......._
 
 ---
 
 
-## Prerequisites
+## _Prerequisites_
 
 _This module needs_ **_Terraform 0.11.14_** _or newer._
 _You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
@@ -18,7 +18,7 @@ _This module deploys aws services details are in respective feature branches._
 ---
 
 
-## Features
+## _Features_
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
@@ -32,9 +32,9 @@ _From branch :_ **_terraform-12/master_**
 
 ---
 
-## Usage
+## _Usage_
 
-## Using this repo
+## _Using this repo_
 
 _To use this module, add the following call to your code:_
 
@@ -51,7 +51,7 @@ module "autoscaling_group" {
 ```
 ---
 
-## Inputs
+## _Inputs_
 
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
@@ -62,7 +62,7 @@ _The variables required in order for the module to be successfully called from t
 
 
 
-## Outputs
+## _Outputs_
 
 * **_id_**
 * **_name_**
@@ -71,7 +71,7 @@ _The variables required in order for the module to be successfully called from t
 
 _Details are in respective branch._
 
-### Usage
+### _Usage_
 
 _In order for the variables to be accessed on module level please use the syntax below:_
 
@@ -86,5 +86,5 @@ module.<module_name>.<output_variable_name>
 ```
 
 
-## Authors
+## _Authors_
 _Module maintained by Module maintained by the -_ **_Nitin Das_**
