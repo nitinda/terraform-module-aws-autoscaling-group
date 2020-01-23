@@ -1,27 +1,32 @@
-# Terraform Module Name: terraform-module-aws-autoscaling-group
+# Terraform Module : terraform-module-aws-autoscaling-group
 
 
 ## General
 
-This module may be used to create **_EC2 AutoScalling Group_** resources in AWS cloud provider..
+_This module may be used to create_ **_EC2 AutoScalling Group_** _resources in AWS cloud provider......._
 
 ---
 
 
 ## Prerequisites
 
-This module needs **_Terraform 0.11.14_** or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
+_This module needs_ **_Terraform 0.11.14_** _or newer._
+_You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
 
-This module deploys aws services details are in respective feature branches.
+_This module deploys aws services details are in respective feature branches._
 
 ---
 
 
-## Features Branches
+## Features
 
-Below we are able to check the resources that are being created as part of this module call:
+_Below we are able to check the resources that are being created as part of this module call:_
 
+_From branch :_ **_terraform-11/master_**
+* **_EC2 AutoScalling Group_**
+
+
+_From branch :_ **_terraform-12/master_**
 * **_EC2 AutoScalling Group_**
 
 
@@ -31,7 +36,7 @@ Below we are able to check the resources that are being created as part of this 
 
 ## Using this repo
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
 module "autoscaling_group" {
@@ -48,7 +53,7 @@ module "autoscaling_group" {
 
 ## Inputs
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
@@ -64,11 +69,11 @@ The variables required in order for the module to be successfully called from th
 * **_arn_**
 
 
-Details are in respective branch.
-
+_Details are in respective branch._
 
 ### Usage
-In order for the variables to be accessed on module level please use the syntax below:
+
+_In order for the variables to be accessed on module level please use the syntax below:_
 
 ```tf
 module.<module_name>.<output_variable_name>
@@ -82,4 +87,4 @@ module.<module_name>.<output_variable_name>
 
 
 ## Authors
-Module maintained by Module maintained by the - **_Nitin Das_**
+_Module maintained by Module maintained by the -_ **_Nitin Das_**
