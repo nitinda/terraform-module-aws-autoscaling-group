@@ -67,9 +67,10 @@ module "autoscaling_group" {
       id      = var.launch_template_id
       version = "$Latest"
   }
-  tags                      = merge(var.common_tags, map(
-    "Name", "ec2-autoscaling-group"
-  ))
+  tags = {
+    Project      = "POC"
+    Environment  = "prod"
+  }
 }
 
 ```
@@ -114,9 +115,10 @@ module "autoscaling_group" {
           on_demand_percentage_above_base_capacity = 0
       }
   }
-  tags                      = merge(var.common_tags, map(
-    "Name", "ec2-autoscaling-group"
-  ))
+  tags = {
+    Project      = "POC"
+    Environment  = "prod"
+  }
 }
 
 ```
