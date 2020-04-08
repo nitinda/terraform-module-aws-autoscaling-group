@@ -158,6 +158,10 @@ _The variables required in order for the module to be successfully called from t
 
 ## _Outputs_
 
+### _General_
+
+_This module has the following outputs:_
+
 * **_id_**
 * **_name_**
 * **_arn_**
