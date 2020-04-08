@@ -144,6 +144,7 @@ _The variables required in order for the module to be successfully called from t
 | **_mixed\_instances\_policy_** | _Configuration block_ | _any_ | **_Optional_** |
 | **_launch\_template_** | _Nested argument with Launch template_ | _map(string)_ | **_Required_** |
 
+---
 
 
 ## _Outputs_
@@ -152,6 +153,7 @@ _The variables required in order for the module to be successfully called from t
 * **_name_**
 * **_arn_**
 
+---
 
 
 ### _Usage_
@@ -167,6 +169,7 @@ _The output variable is able to be accessed through terraform state file using t
 ```tf
 data.terraform_remote_state.<module_name>.<output_variable_name>
 ```
+---
 
 
 ## Authors
