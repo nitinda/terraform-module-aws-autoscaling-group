@@ -134,16 +134,23 @@ _The variables required in order for the module to be successfully called from t
 | **_max\_size_** | _The maximum size of the auto scale group_ | _number_ | **_Optional <br/> (Default - 0)_** |
 | **_min\_size_** | _The minimum size of the auto scale group_ | _number_ | **_Optional <br/> (Default - 0)_** |
 | **_default\_cooldown_** | _The amount of time, in seconds, after a scaling activity <br/> completes before another scaling activity can start_ | _string_ | **_Optional <br/> (Default - 60)_** |
-| **_desired\_capacity_** | _The number of Amazon EC2 instances_ | _string_ | **_Required_** |
+| **_launch\_configuration_** | _The name of the launch configuration to use_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_launch\_template_** | _Nested argument with Launch template specification <br/> to use to launch instances_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_mixed\_instances\_policy_** | _Configuration block containing settings to define <br/> launch targets for Auto Scaling groups_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_initial\_lifecycle\_hook_** | _One or more Lifecycle Hooks to attach to the autoscaling <br/> group before instances are launched_ | _any_ | **_Optional <br/> (Default - [])_** |
+| **_health\_check\_grace\_period_** | _Time (in seconds) after instance comes_ | _number_ | **_Optional <br/> (Default - 300)_** |
 | **_health\_check\_type_** | _Type of health check_ | string | **_Optional (Default - EC2)_** |
-| **_force\_delete_** | _Allows deleting the autoscaling group_ | _string_ | **_Optional (Default - true)_** |
-| **_vpc\_zone\_identifier_** | _A list of subnet IDs to launch resources_ | _list(string)_ | **_Required_** |
-| **_target\_group\_arns_** | _A list of aws_alb_target_group ARNs_ | _list(string)_ | **_Optional_** |
-| **_health\_check\_grace\_period_** | _Time (in seconds) after instance comes_ | _string_ | **_Optional (Default - 300)_** |
-| **_suspended\_processes_** | _A list of processes to suspend_ | _list(string)_ | **_Optional_** |
-| **_tags_** | _A list of tag blocks_ | _map(string)_ | **_Required_** |
-| **_mixed\_instances\_policy_** | _Configuration block_ | _any_ | **_Optional_** |
-| **_launch\_template_** | _Nested argument with Launch template_ | _map(string)_ | **_Required_** |
+| **_desired\_capacity_** | _The number of Amazon EC2 instances_ | _number_ | **_Optional <br/> (Default - 0)_** |
+| **_force\_delete_** | _Allows deleting the autoscaling group without <br/> waiting for all instances in the pool to terminate_ | _bool_ | **_Optional (Default - true)_** |
+| **_load\_balancers_** | _A list of elastic load balancer names to add <br/> to the autoscaling group names_ | _list(string)_ | **_Optional <br/> (Default - [])_** |
+| **_vpc\_zone\_identifier_** | _A list of subnet IDs to launch resources_ | _list(string)_ | **_Optional <br/> (Default - [])_** |
+| **_target\_group\_arns_** | _A list of aws\_alb\_target\_group ARNs, for use <br/> with Application or Network Load Balancing_ | _list(string)_ | **_Optional <br/> (Default - [])_** |
+| **_termination\_policies_** | _A list of policies to decide how the instances <br/> in the auto scale group should be terminated_ | _list(string)_ | **_Optional <br/> (Default - [])_** |
+| **_suspended\_processes_** | _A list of processes to suspend for the AutoScaling Group_ | _list(string)_ | **_Optional <br/> (Default - [])_** |
+| **_tag_** | _A list of tag blocks_ | _map(string)_ | **_Optional <br/> (Default - [])_** |
+| **_tags_** | _A list of tag blocks_ | _map(string)_ | **_Optional <br/> (Default - [])_** |
+| **_placement\_group_** | _The name of the placement group into which you'll <br/> launch your instances, if any_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_max\_instance\_lifetime_** | _The maximum amount of time, in seconds, that an <br/> instance can be in service_ | _string_ | **_Optional <br/> (Default - null)_** |
 
 
 ---
