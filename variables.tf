@@ -99,9 +99,16 @@ variable "suspended_processes" {
   default     = []
 }
 
+variable "tag" {
+  description = "A list of tag blocks"
+  default     = []
+  type        = any
+}
+
 variable "tags" {
   description = "A list of tag blocks."
   type        = map(string)
+  default     = []
 }
 
 variable "placement_group" {
