@@ -129,11 +129,12 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
 |:----|:----|-----:|-----:|
-| **_name\_prefix_** | _Creates a unique name_ | _string_ | **_Required_** |
+| **_name_** | _The name of the auto scaling group_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_name\_prefix_** | _Creates a unique name beginning with the specified prefix_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_max\_size_** | _The maximum size of the auto scale group_ | _number_ | **_Optional <br/> (Default - 0)_** |
+| **_min\_size_** | _The minimum size of the auto scale group_ | _number_ | **_Optional <br/> (Default - 0)_** |
+| **_default\_cooldown_** | _The amount of time, in seconds, after a scaling activity <br/> completes before another scaling activity can start_ | _string_ | **_Optional <br/> (Default - 60)_** |
 | **_desired\_capacity_** | _The number of Amazon EC2 instances_ | _string_ | **_Required_** |
-| **_max\_size_** | _The maximum size_ | _string_ | **_Required_** |
-| **_min\_size_** | _The minimum size_ | _string_ | **_Required_** |
-| **_default\_cooldown_** | _The amount of time, in seconds_ | _string_ | **_Optional (Default - 60)_** |
 | **_health\_check\_type_** | _Type of health check_ | string | **_Optional (Default - EC2)_** |
 | **_force\_delete_** | _Allows deleting the autoscaling group_ | _string_ | **_Optional (Default - true)_** |
 | **_vpc\_zone\_identifier_** | _A list of subnet IDs to launch resources_ | _list(string)_ | **_Required_** |
@@ -143,6 +144,7 @@ _The variables required in order for the module to be successfully called from t
 | **_tags_** | _A list of tag blocks_ | _map(string)_ | **_Required_** |
 | **_mixed\_instances\_policy_** | _Configuration block_ | _any_ | **_Optional_** |
 | **_launch\_template_** | _Nested argument with Launch template_ | _map(string)_ | **_Required_** |
+
 
 ---
 
