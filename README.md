@@ -1,5 +1,17 @@
 # _Terraform Module : terraform-module-aws-autoscaling-group_
+_Terraform Module for_ **_AWS Autoscaling Group_**
 
+<!--BEGIN STABILITY BANNER-->
+---
+
+![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
+
+> **_This is a stable example. It should successfully build out of the box_**
+>
+> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
+
+---
+<!--END STABILITY BANNER-->
 
 ## _General_
 
@@ -19,7 +31,7 @@ _This module deploys aws services details are in respective feature branches._
 ---
 
 
-## _Features Branches_
+## _Features_
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
@@ -38,7 +50,7 @@ _Example with_ **_launch\_tamplate_**
 
 ```tf
 module "autoscaling_group" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-12/master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=master"
 
   providers = {
     aws = aws.services
@@ -117,20 +129,20 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
 |:----|:----|-----:|-----:|
-| **_name\_prefix_** | Creates a unique name | _string_ | **_Required_** |
-| **_desired\_capacity_** | The number of Amazon EC2 instances | _string_ | **_Required_** |
-| **_max\_size_** | The maximum size | _string_ | **_Required_** |
-| **_min\_size_** | The minimum size | _string_ | **_Required_** |
-| **_default\_cooldown_** | The amount of time, in seconds | _string_ | **_Optional (Default - 60)_** |
-| **_health\_check\_type_** | Type of health check | string | **_Optional (Default - EC2)_** |
-| **_force\_delete_** | Allows deleting the autoscaling group | _string_ | **_Optional (Default - true)_** |
-| **_vpc\_zone\_identifier_** | A list of subnet IDs to launch resources | _list(string)_ | **_Required_** |
-| **_target\_group\_arns_** | A list of aws_alb_target_group ARNs | _list(string)_ | **_Optional_** |
-| **_health\_check\_grace\_period_** | Time (in seconds) after instance comes | _string_ | **_Optional (Default - 300)_** |
-| **_suspended\_processes_** | A list of processes to suspend | _list(string)_ | **_Optional_** |
-| **_tags_** | A list of tag blocks | _map(string)_ | **_Required_** |
-| **_mixed\_instances\_policy_** | Configuration block | _any_ | **_Optional_** |
-| **_launch\_template_** | Nested argument with Launch template | _map(string)_ | **_Required_** |
+| **_name\_prefix_** | _Creates a unique name_ | _string_ | **_Required_** |
+| **_desired\_capacity_** | _The number of Amazon EC2 instances_ | _string_ | **_Required_** |
+| **_max\_size_** | _The maximum size_ | _string_ | **_Required_** |
+| **_min\_size_** | _The minimum size_ | _string_ | **_Required_** |
+| **_default\_cooldown_** | _The amount of time, in seconds_ | _string_ | **_Optional (Default - 60)_** |
+| **_health\_check\_type_** | _Type of health check_ | string | **_Optional (Default - EC2)_** |
+| **_force\_delete_** | _Allows deleting the autoscaling group_ | _string_ | **_Optional (Default - true)_** |
+| **_vpc\_zone\_identifier_** | _A list of subnet IDs to launch resources_ | _list(string)_ | **_Required_** |
+| **_target\_group\_arns_** | _A list of aws_alb_target_group ARNs_ | _list(string)_ | **_Optional_** |
+| **_health\_check\_grace\_period_** | _Time (in seconds) after instance comes_ | _string_ | **_Optional (Default - 300)_** |
+| **_suspended\_processes_** | _A list of processes to suspend_ | _list(string)_ | **_Optional_** |
+| **_tags_** | _A list of tag blocks_ | _map(string)_ | **_Required_** |
+| **_mixed\_instances\_policy_** | _Configuration block_ | _any_ | **_Optional_** |
+| **_launch\_template_** | _Nested argument with Launch template_ | _map(string)_ | **_Required_** |
 
 
 
