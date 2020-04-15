@@ -106,9 +106,9 @@ variable "tag" {
 }
 
 variable "tags" {
-  description = "A list of tag blocks."
-  type        = map(string)
-  default     = {}
+  description = "A list of tag blocks (maps)"
+  type        = list(map(string))
+  default     = []
 }
 
 variable "placement_group" {
