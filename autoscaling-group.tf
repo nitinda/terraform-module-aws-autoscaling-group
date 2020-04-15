@@ -88,7 +88,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
     }
   }
 
-  tags                  = var.tags
+  # tags                  = var.tags
   placement_group       = var.placement_group
   max_instance_lifetime = var.max_instance_lifetime
 
