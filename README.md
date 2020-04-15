@@ -1,6 +1,9 @@
 # _Terraform Module : terraform-module-aws-autoscaling-group_
 _Terraform Module for_ **_AWS Autoscaling Group_**
 
+**_Note_**_: You must specify either_ **_launch_configuration_**_,_ **_launch_template_**_, or_ **_mixed_instances_policy_**_._
+
+
 <!--BEGIN STABILITY BANNER-->
 ---
 
