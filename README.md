@@ -18,7 +18,7 @@ _Terraform Module for_ **_AWS Autoscaling Group_**
 
 ## _General_
 
-_This module may be used to create_ **_EC2 AutoScalling Group_** _resources in AWS cloud provider....._
+_This module Provides a_ **_AutoScalling Group_** _resources in AWS cloud provider....._
 
 ---
 
