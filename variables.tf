@@ -105,11 +105,11 @@ variable "tag" {
   type        = any
 }
 
-variable "tags" {
-  description = "A list of tag blocks (maps)"
-  type        = list(map(string))
-  default     = []
-}
+# variable "tags" {
+#   description = "A list of tag blocks (maps)"
+#   type        = list(map(string))
+#   default     = []
+# }
 
 variable "placement_group" {
   description = "The name of the placement group into which you'll launch your instances, if any"
