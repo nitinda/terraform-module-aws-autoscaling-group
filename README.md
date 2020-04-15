@@ -139,7 +139,7 @@ module "autoscaling_group" {
   max_size                  = 0
   min_size                  = 0
   default_cooldown          = 1
-  vpc_zone_identifier       = [ module.vpc.vpc_subnet_public_1a.id, module.vpc.vpc_subnet_public_1b.id]
+  vpc_zone_identifier       = [ module.vpc_subnet_public_1a.id, module.vpc_subnet_public_1b.id]
   health_check_grace_period = 1
   mixed_instances_policy    = {
       launch_template = {
