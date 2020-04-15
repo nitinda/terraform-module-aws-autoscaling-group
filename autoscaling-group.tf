@@ -80,11 +80,11 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   enabled_metrics           = var.enabled_metrics
 
   dynamic "tag" {
-    for_each = var.tag
+    for_each = [var.tag]
     content {
-      key                 = tag.key
-      propagate_at_launch = tag.propagate_at_launch
-      value               = tag.value
+      key                 = tag..key
+      propagate_at_launch = tag.value.propagate_at_launch
+      value               = tag.value.value
     }
   }
 
