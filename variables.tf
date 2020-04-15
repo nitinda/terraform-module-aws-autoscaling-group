@@ -31,7 +31,7 @@ variable "launch_configuration" {
 variable "launch_template" {
   description = "Nested argument with Launch template specification to use to launch instances."
   type        = any
-  default     = []
+  default     = {}
 }
 
 variable "mixed_instances_policy" {
@@ -108,7 +108,7 @@ variable "tag" {
 variable "tags" {
   description = "A list of tag blocks."
   type        = map(string)
-  default     = []
+  default     = {}
 }
 
 variable "placement_group" {
