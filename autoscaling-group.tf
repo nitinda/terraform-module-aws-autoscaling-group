@@ -83,7 +83,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
     for_each = var.tag
     content {
       key                 = tag.key
-      propagate_at_launch = true
+      propagate_at_launch = lookup(tag.value, "propagate_at_launch", true)
       value               = tag.value
     }
   }
