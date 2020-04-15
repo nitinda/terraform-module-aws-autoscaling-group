@@ -43,7 +43,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
           }
 
           dynamic "override" {
-            for_each = lookup(launch_template.value, "override", []) == [] ? [] : [lookup(launch_template.value, "override", [])]
+            for_each = lookup(launch_template.value, "override", [])
             content {
               instance_type     = lookup(override.value, "instance_type", null)
               weighted_capacity = lookup(override.value, "weighted_capacity", null)
