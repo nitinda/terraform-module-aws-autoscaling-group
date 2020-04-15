@@ -82,7 +82,7 @@ _Example with_ **_mixed\_instances\_policy_**
 
 ```tf
 module "autoscaling_group" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=terraform-12/master"
+  source = "git::https://github.com/nitinda/terraform-module-aws-autoscaling-group.git?ref=master"
 
   providers = {
     aws = aws.services
