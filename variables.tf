@@ -116,6 +116,17 @@ variable "placement_group" {
   default     = null
 }
 
+variable "metrics_granularity" {
+  description = "The granularity to associate with the metrics to collect"
+  default     = "1Minute"
+}
+
+variable "enabled_metrics" {
+  description = "A list of metrics to collect"
+  default     = []
+  type        = list(string)
+}
+
 variable "max_instance_lifetime" {
   description = "The maximum amount of time, in seconds, that an instance can be in service, values must be either equal to 0 or between 604800 and 31536000 seconds"
   default     = null

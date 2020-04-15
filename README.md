@@ -211,6 +211,8 @@ _The variables required in order for the module to be successfully called from t
 | **_tag_** | _A list of tag blocks_ | _any_ | **_Optional_** | **_[]_** |
 | **_tags_** | _A list of tag blocks_ | _map(string)_ | **_Optional_** | **_{}_** |
 | **_placement\_group_** | _The name of the placement group into which you'll <br/> launch your instances, if any_ | _string_ | **_Optional_** | **_null_** |
+| **_metrics\_granularity_** | _The granularity to associate with the <br/>metrics to collect_ | _string_ | **_Optional_** | **_1Minute_** |
+| **_enabled\_metrics_** | _A list of metrics to collect_ | _list(string)_ | **_Optional_** | **_[]_** |
 | **_max\_instance\_lifetime_** | _The maximum amount of time, in seconds, that an <br/> instance can be in service_ | _string_ | **_Optional_** | **_null_** |
 
 
