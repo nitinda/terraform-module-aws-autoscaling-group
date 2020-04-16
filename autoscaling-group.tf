@@ -19,7 +19,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
     for_each = var.mixed_instances_policy
     content {
       dynamic "instances_distribution" {
-        for_each = lookup(mixed_instances_policy.value, "instances_distribution", []) == [] ? [] : [lookup(mixed_instances_policy.value, "instances_distribution", [])] 
+        for_each = lookup(mixed_instances_policy.value, "instances_distribution", [])# == [] ? [] : [lookup(mixed_instances_policy.value, "instances_distribution", [])] 
         content {
           on_demand_allocation_strategy            = lookup(instances_distribution.value, "on_demand_allocation_strategy", null)
           on_demand_base_capacity                  = lookup(instances_distribution.value, "on_demand_base_capacity", null)
