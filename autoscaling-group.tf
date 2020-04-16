@@ -16,7 +16,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   }
 
   dynamic "mixed_instances_policy" {
-    for_each = var.mixed_instances_policy
+    for_each = var.mixed_instances_policy == {} ? [] : [var.mixed_instances_policy]
     content {
       dynamic "instances_distribution" {
         for_each = lookup(mixed_instances_policy.value, "instances_distribution", []) == [] ? [] : [lookup(mixed_instances_policy.value, "instances_distribution", [])] 
