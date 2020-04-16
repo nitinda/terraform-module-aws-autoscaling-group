@@ -31,7 +31,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
       }
 
       dynamic "launch_template" {
-        for_each = lookup(mixed_instances_policy.value, "launch_template", []) == [] ? [] : [lookup(mixed_instances_policy.value, "launch_template", [])]
+        for_each = lookup(mixed_instances_policy.value, "launch_template", [])# == [] ? [] : [lookup(mixed_instances_policy.value, "launch_template", [])]
         content {
           dynamic "launch_template_specification" {
             for_each = lookup(launch_template.value, "launch_template_specification", []) == [] ? [] : [lookup(launch_template.value, "launch_template_specification", [])]
